@@ -12,6 +12,8 @@ const Skills = () => {
           <div className="skill">React</div>
           <div className="skill">Python</div>
           <div className="skill">Node.js</div>
+          <div className="skill">Html</div>
+          <div className="skill">Css</div>
         </div>
       </div>
     </section>
