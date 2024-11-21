@@ -1,13 +1,337 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #333;
+  --accent-color: #FFD700;
+  --background-color: #f9f9f9;
+  --text-color: #444;
+  --font-family: 'Poppins', Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+header nav {
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Section générale */
+.section {
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  /* Espace entre les sections */
+  background-color: #fff;
+  border-radius: 15px;
+  /* Bords arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet léger au survol de la section */
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Espaces vides en dehors de la section */
+#about, #projects, #contact {
+  margin-top: 50px;
+}
+
+/* Sections spécifiques */
+#about {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 123, 255, 0.1));
+  border-radius: 15px;
+  /* Bords arrondis pour cette section */
+}
+
+#projects {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 123, 255, 0.1));
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-radius: 15px;
+  /* Bords arrondis pour cette section */
+}
+
+#skills {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 123, 255, 0.1));
+
+}
+
+#contact {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 123, 255, 0.1));
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-radius: 15px;
+  /* Bords arrondis pour cette section */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Sections */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+
+.skills-grid, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.skill, .project-card {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover, .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Section à propos de moi */
+#about {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+#about h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color);
+  display: block;
+  margin: 10px auto;
+}
+
+/* Skills section */
+
+#skills h2 {
+  color: var(--primary-color);
+}
+#skills h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color);
+  display: block;
+  margin: 10px auto;
+}
+
+/* Projects section */
+
+#projects h2{
+  color: var(--primary-color);
+
+}
+#projects h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color);
+  display: block;
+  margin: 10px auto;
+}
+
+
+/* Contenu de la section */
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  text-align: justify;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+}
+
+.about-content .highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.about-content .call-to-action {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  text-align: center;
+  margin-top: 40px;
+  padding: 15px;
+  border: 2px solid var(--accent-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-content .call-to-action:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Contact Section */
+#contact h2 {
+  color: var(--primary-color);
+}
+#contact h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color);
+  display: block;
+  margin: 10px auto;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+#contact a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+#contact a:hover {
+  border-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  background: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Animation de fond pour les espaces vides */
+@keyframes fadeInBackground {
+  0% {
+      background-color: #fff;
+  }
+
+  100% {
+      background-color: #f1f1f1;
+  }
+}
+
+body {
+  animation: fadeInBackground 2s ease-in-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+      padding: 40px 10px;
+  }
+
+  #about, #projects, #contact {
+      margin-top: 30px;
+  }
+
+  header h1 {
+      font-size: 2rem;
+  }
+
+  header p {
+      font-size: 1rem;
+  }
+
+  .section h2 {
+      font-size: 2rem;
+  }
+
+  .skills-grid, .projects-grid {
+      grid-template-columns: 1fr;
+  }
 }
